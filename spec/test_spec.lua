@@ -1,8 +1,8 @@
 -- test_spec.lua
-local busted = require "busted.runner" ({standalone=false})
 
--- require "busted.runner"
-
+-- we use packages provided by LuaTeX, so we need to take care of it
+-- in the future, we should all dependend packages publish on LuaRocks
+-- so we can get rid of this dependency
 kpse.set_program_name "luatex"
 require "lualoader"
 package.path = ";../src/?.lua" .. package.path
