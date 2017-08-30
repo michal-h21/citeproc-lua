@@ -41,12 +41,22 @@ function citeproc_lua:new (o)
     return o
 end
 
-function citeproc_lua:method(text)
-    -- docstring
-    if string.len(text) == 0 then
-        return false
-    end
-    return true
+function citeproc_lua:load_csl(csl_string)
+  local dom,msg = domobject.parse(csl_string)
+  if not dom then return nil, msg end
+  self.dom = dom
+  return dom
 end
+
+function citeproc_lua:load_file(filename)
+  local f = io.open(filename, "r")
+  if not f then return nil, "Cannot load CSL file: ".. filename end
+  local text = f:read("*all")
+  f:close()
+  return self:load_csl(text)
+end
+  
+
+
 
 return citeproc_lua
