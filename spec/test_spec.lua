@@ -8,9 +8,18 @@ require "lualoader"
 package.path = ";../src/?.lua" .. package.path
 
 expose("exposed test for citeproc-lua", function()
-    require("citeproc-lua")
+    local citeproc = require("citeproc-lua")
+
 
     -- tests can go here
+    describe("load basic csl style", function()
+      local cslobj = citeproc:new()
+      local status, msg = cslobj:load_file("spec/sample.csl")
+      it("can load basic csl sample", function()
+        assert.truthy(status)
+      end)
+
+    end)
 
     describe("some assertions", function()
         it("tests positive assertions", function()
