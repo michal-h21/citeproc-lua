@@ -18,6 +18,6 @@ dependencies = {
 build = {
   type = "builtin",
    modules = {
-    ["citeproc-lua"] = "src/citeproc-lua.lua"
+    ["citeproc-lua"] = "src/citeproc.lua"
   }
 }

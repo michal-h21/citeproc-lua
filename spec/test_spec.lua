@@ -8,7 +8,7 @@ require "lualoader"
 package.path = ";../src/?.lua" .. package.path
 
 expose("exposed test for citeproc-lua", function()
-    local citeproc = require("citeproc-lua")
+    local citeproc = require("citeproc")
 
 
     -- tests can go here
