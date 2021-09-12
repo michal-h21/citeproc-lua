@@ -12,7 +12,4 @@ citeproc-lua
         :target: https://travis-ci.org/michal-h21/citeproc-lua
 
 
-Features
---------
-
-* TODO
+This project is obsolete, use this project instead: https://github.com/zepinglee/citeproc-lua 
